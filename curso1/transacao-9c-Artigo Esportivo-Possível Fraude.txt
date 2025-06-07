@@ -1,0 +1,9 @@
+Recomendação:
+
+Devido aos indicadores de risco detalhados no parecer, incluindo o alto valor da transação, o local e o horário da aquisição, recomendamos as seguintes ações:
+
+1. "Acionar setor Anti-Fraude": A equipe de anti-fraude deve ser notificada para uma investigação mais aprofundada. Eles estão equipados para realizar análises detalhadas e fornecer medidas protetivas adicionais.
+
+2. "Notificar Cliente": Entre em contato com o titular do cartão para verificar se este reconhece e autoriza a transação. Esta é uma medida preventiva para evitar quaisquer potenciais danos antes que eles ocorram. 
+
+Por fim, a transação deve ser classificada como "Fraude por valor alto", designação que indica que os indivíduos possivelmente envolvidos na transação estão tentando realizar compras que não estão de acordo com o padrão habitual do titular do cartão.
