@@ -1,0 +1,13 @@
+[project]
+name = "curso3"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "faiss-cpu>=1.11.0",
+    "numpy>=2.3.0",
+    "openai>=1.86.0",
+    "opencv-python>=4.11.0.86",
+    "python-dotenv>=1.1.0",
+    "selenium>=4.33.0",
+    "tiktoken>=0.9.0",
+]
