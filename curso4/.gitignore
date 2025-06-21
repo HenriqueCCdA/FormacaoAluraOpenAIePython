@@ -1,0 +1,9 @@
+# Ignorar todos os arquivos .pyc
+__pycache__/
+*.pyc
+
+# Ignorar a pasta do ambiente virtual
+curso_code_interpreter/
+
+# Ignorar o arquivo .env
+.env
