@@ -1,0 +1,28 @@
+**Análise do Código**
+
+O código define uma classe chamada `dataanalytics` para análise de dados de canais de streaming, utilizando principalmente o pandas para manipulação de dados. A seguir estão os métodos dessa classe e suas funcionalidades:
+
+1. **`__init__(self, data : DataFrame)`**: Construtor da classe que inicializa a instância com o DataFrame fornecido. Também cria uma cópia dos dados e um backup, além de inicializar um DataFrame temporário vazio e um cache.
+
+2. **`getTopChannelByViewers(self, top_n=10)`**: Calcula e retorna os `top_n` canais com mais tempo de exibição em minutos. Adiciona o resultado em uma variável temporária e um cache.
+
+3. **`getStreamerStats(self, streamer : str)`**: Retorna as estatísticas de um streamer específico como JSON, incluindo média de espectadores, tempo total de exibição e tempo de transmissão.
+
+4. **`getTopChannelByStreamTime(self, top_n=10)`**: Calcula e retorna os `top_n` canais com mais tempo de transmissão. 
+
+5. **`getAverageViewersByChannel(self, top_n=10)`**: Calcula e imprime a média de espectadores dos `top_n` canais, retornando o resultado.
+
+**Sugestão de Commit**
+
+```plaintext
+:sparkles: Adiciona classe de análise de dados de streaming
+
+Implementação da classe `dataanalytics` que provê funcionalidades para análise de dados de canais de streaming, tais como:
+
+- Obter os melhores canais por tempo de exibição.
+- Extrair estatísticas de um streamer específico.
+- Determinar canais com maior tempo de transmissão.
+- Calcular a média de espectadores por canal.
+
+Essa implementação facilita a análise de dados através de funções personalizadas utilizando a biblioteca pandas.
+```

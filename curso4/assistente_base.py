@@ -51,9 +51,9 @@ class AssistenteBase(ABC):
         self.cliente.files.delete(self.id_arquivo)
 
     def apagar_thread(self):
-        reposta =self.cliente.beta.threads.delete(self.thread.id)
-        return reposta
+        resposta =self.cliente.beta.threads.delete(self.thread.id)
+        return resposta
 
     def apagar_assistente(self):
-        reposta =self.cliente.beta.assistants.delete(self.assistente.id)
-        return reposta
+        resposta =self.cliente.beta.assistants.delete(self.assistente.id)
+        return resposta

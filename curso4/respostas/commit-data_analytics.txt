@@ -1,0 +1,19 @@
+Analisando o arquivo enviado, temos um script Python que define uma classe `dataanalytics`. A classe é projetada para realizar análises em um conjunto de dados relacionado a transmissões. Aqui estão os métodos implementados na classe:
+
+1. **Construtor `__init__`:** Inicializa a classe com métodos necessários, criando cópias dos dados originais para backup e manipulações futuras. Ele também inicializa um cache vazio para armazenar resultados de operações específicas.
+
+2. **Método `getTopChannelByViewers`:** Calcula e retorna os canais com o maior tempo de visualização (espectadores), utilizando a métrica 'Watch time(Minutes)'. Armazena o resultado temporariamente e o coloca em cache para consulta posterior.
+
+3. **Método `getStreamerStats`:** Gera estatísticas associadas a um streamer específico, incluindo a média de espectadores, o tempo total de visualização e o tempo total de transmissão. Os resultados são formatados em JSON para facilidade de leitura.
+
+4. **Método `getTopChannelByStreamTime`:** Identifica e retorna os canais que tiveram o maior tempo de transmissão com base na métrica 'Stream time(minutes)'.
+
+5. **Método `getAverageViewersByChannel`:** Calcula e retorna a média de espectadores por canal, classificando-os em ordem decrescente.
+
+Levando em consideração que não houve atualizações mas é uma introdução à análise de dados de transmissão, a sugestão de commit seria:
+
+---
+
+:sparkles: Adiciona classe para análise de dados de transmissões no Twitch
+
+Implementa uma nova classe `dataanalytics` que fornece métodos para calcular os canais mais populares por tempo de visualização, gerar estatísticas detalhadas para streamers específicos, identificar canais com maior tempo de transmissão e calcular a média de espectadores por canal.

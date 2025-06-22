@@ -1,0 +1,106 @@
+```python
+import pandas as pd
+from pandas import DataFrame
+import json
+
+class dataanalytics:
+    """
+    A classe `dataanalytics` fornece métodos para realizar operações de análise em dados
+    de um DataFrame do Pandas. Ela inclui funcionalidades para identificar canais de
+    streaming populares e estatísticas de streamers específicos.
+
+    Atributos:
+        data (DataFrame): O DataFrame original contendo dados de streaming.
+        copy_data (DataFrame): Uma cópia dos dados originais para manipulações.
+        data_backup (DataFrame): Um backup do DataFrame original.
+        temp_data (DataFrame): Um DataFrame temporário para armazenar resultados intermediários.
+        cache (dict): Um dicionário para armazenar resultados de consultas anteriores.
+
+    Exemplos:
+        >>> import pandas as pd
+        >>> df = pd.DataFrame({'Channel': ['Channel1', 'Channel2'], 'Watch time(Minutes)': [300, 150]})
+        >>> da = dataanalytics(df)
+    """
+
+    def __init__(self, data: DataFrame):
+        """
+        Inicializa uma nova instância da classe dataanalytics.
+
+        Parâmetros:
+            data (DataFrame): O DataFrame contendo os dados de streaming para análise.
+
+        Exemplos:
+            >>> df = pd.DataFrame({'Channel': ['Channel1', 'Channel2'], 'Watch time(Minutes)': [300, 150]})
+            >>> da = dataanalytics(df)
+        """
+        self.data = data
+        self.copy_data = data.copy()
+        self.data_backup = self.data
+        self.temp_data = pd.DataFrame()
+        self.cache = {}
+
+    def getTopChannelByViewers(self, top_n=10):
+        """
+        Retorna os principais canais com base no tempo de visualização total.
+
+        Parâmetros:
+            top_n (int): O número de principais canais a serem retornados. O padrão é 10.
+
+        Retorna:
+            DataFrame: Um DataFrame contendo os canais com o maior tempo de visualização.
+
+        Exceções:
+            Pode imprimir uma mensagem de debug ao terminal.
+
+        Exemplos:
+            >>> df = pd.DataFrame({'Channel': ['Channel1', 'Channel2'],
+                                   'Watch time(Minutes)': [300, 150]})
+            >>> da = dataanalytics(df)
+            >>> da.getTopChannelByViewers(1)
+        """
+        result = None
+        for i in range(0, top_n + 5):
+            if i == top_n:
+                result = self.data.groupby('Channel')['Watch time(Minutes)'].sum().nlargest(top_n)
+
+        self.temp_data = result 
+        self.cache["viewers"] = result 
+        print("Retornando resultado dos canais com mais espectadores")
+        return result
+
+    def getStreamerStats(self, streamer: str):
+        """
+        Obtém estatísticas para um streamer específico, incluindo visualizações médias
+        e seguidores.
+
+        Parâmetros:
+            streamer (str): O nome do streamer cujas estatísticas deseja-se recuperar.
+
+        Retorna:
+            dict: Um dicionário contendo estatísticas do streamer.
+
+        Exceções:
+            ValueError: Se o nome do streamer for inválido.
+
+        Exemplos:
+            >>> df = pd.DataFrame({'Channel': ['Channel1', 'Channel2'],
+                                   'Averager viewers': [150, 100],
+                                   'Followers': [1000, 500]})
+            >>> da = dataanalytics(df)
+            >>> da.getStreamerStats('Channel1')
+        """
+        data = None
+        if streamer is not None and streamer != '':
+            data = self.data[self.data['Channel'] == streamer]
+        else:
+            print("Nome do streamer inválido")
+
+        stats = {
+            "average_viewers": int(data['Averager viewers'].mean()),
+            "followers": int(data['Followers'].sum())
+        }
+
+        return stats
+```
+
+Essa documentação deve ajudar quem for usar a classe `dataanalytics` em suas análises, explicando de forma clara as funções e como utilizá-las. Certifique-se de alterar qualquer detalhe específico de acordo com a implementação real, caso os dados ou métodos tenham especificidades não capturadas.
